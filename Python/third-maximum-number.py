@@ -28,3 +28,19 @@ class Solution(object):
             return top[0]
 
         return top[2]
+
+class Solution(object):
+def thirdMax(self, nums):
+    """
+    :type nums: List[int]
+    :rtype: int
+    """
+    A = sorted(nums)
+    count, base = 1, A[-1]
+    for i in range(len(nums)-2, -1, -1):
+        if A[i] != base:
+            base = A[i]
+            count += 1
+        if count == 3:
+            return base
+    return A[-1]
