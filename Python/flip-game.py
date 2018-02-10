@@ -35,3 +35,14 @@ class Solution2(object):
       """
       return [s[:i] + "--" + s[i+2:] for i in xrange(len(s) - 1) if s[i:i+2] == "++"]
   
+class Solution3(object):
+  def generatePossibleNextMoves(self, s):
+      """
+      :type s: str
+      :rtype: List[str]
+      """
+      res = []
+      for i in range(0, len(s) - 2):
+        if s[i] == '+' and s[i+1] = '+':
+            res.append(s[:i] + '--' + s[i+2:])
+      return res
