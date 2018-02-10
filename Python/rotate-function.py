@@ -40,3 +40,19 @@ class Solution(object):
             fi += s - len(A) * A[-i]
             result = max(result, fi)
         return result
+
+class Solution2(object):
+    def maxRotateFunction(self, A):
+        """
+        :type A: List[int]
+        :rtype: int
+        """
+        fi, s = 0, sum(A)
+        for i in range(len(A)):
+            fi += i * A[i]
+        re = fi
+        
+        for i in reversed(A):
+            fi += s - len(A) * i
+            re = max(re, fi)
+        return re
