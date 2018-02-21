@@ -3,5 +3,5 @@
 echo Begin update ....
 git add .
 git commit -m '.'
-git push origin newmaster
+git push origin: newmaster
 echo Finish update ....
