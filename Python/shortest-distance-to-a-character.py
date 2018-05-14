@@ -38,3 +38,20 @@ class Solution(object):
                 prev = i
             result[i] = min(result[i], abs(i-prev))
         return result
+
+#Solution without import itertools    
+class Solution:
+    def shortestToChar(self, S, C):
+        """
+        :type S: str
+        :type C: str
+        :rtype: List[int]
+        """
+        n = len(S)
+        result, prev = [n] * n,  -n
+        loop = list(range(n)) + list(range(n-1, -1, -1))
+        for i in loop:
+            if S[i] == C:
+                prev = i
+            result[i] = min(result[i], abs(i-prev))
+        return result
